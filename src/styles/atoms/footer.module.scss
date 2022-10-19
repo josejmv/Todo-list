@@ -1,0 +1,23 @@
+@import '/src/styles/variables.scss';
+
+.footer {
+  display: flex;
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid $bg;
+
+  .divider {
+    max-height: 2em;
+  }
+
+  .logo {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert(1);
+  }
+}

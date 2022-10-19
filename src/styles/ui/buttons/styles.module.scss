@@ -1,0 +1,16 @@
+@import '/src/styles/variables.scss';
+@import '/src/styles/ui/texts/styles.module.scss';
+
+.button {
+  @extend .regular;
+
+  width: 100%;
+  border: none;
+  transition: filter 0.3s;
+  border-radius: $button-radius;
+  background: linear-gradient(180deg, $primary 80%, $light-primary 99%);
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
