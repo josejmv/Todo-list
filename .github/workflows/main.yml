@@ -1,0 +1,32 @@
+name: Cypress tests
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events but only for the dev branch
+  pull_request:
+    branches: [QA]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Install NPM dependencies, cache them correctly
+      # Run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4.2.0
+        env:
+          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+          BASE_API_URL: ${{ secrets.BASE_API_URL }}
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        with:
+          build: yarn build
+          start: yarn start
+          record: true
