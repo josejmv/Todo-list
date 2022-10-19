@@ -1,0 +1,10 @@
+.container {
+  height: 86vh;
+  display: flex;
+
+  .content {
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+  }
+}

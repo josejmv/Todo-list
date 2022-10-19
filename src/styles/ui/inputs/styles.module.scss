@@ -1,0 +1,36 @@
+@import '/src/styles/variables.scss';
+
+.input {
+  width: 100%;
+  color: $white;
+  background: transparent;
+  border-radius: $input-radius;
+
+  &::placeholder {
+    color: rgba($white, 0.6);
+  }
+
+  &:hover {
+    border-color: $white !important;
+  }
+
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: $white !important;
+  }
+}
+
+.password {
+  @extend .input;
+
+  i {
+    transition: color 0.3s;
+    color: rgba($white, 0.6) !important;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+}

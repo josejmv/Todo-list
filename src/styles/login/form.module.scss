@@ -1,0 +1,23 @@
+@import '/src/styles/variables.scss';
+@import '/src/styles/ui/texts/styles.module.scss';
+@import '/src/styles/ui/inputs/styles.module.scss';
+@import '/src/styles/ui/buttons/styles.module.scss';
+
+.container {
+  background: $bg;
+  padding-block: 2rem;
+  border-radius: $section-radius;
+
+  .title {
+    text-align: center;
+  }
+
+  .form {
+    padding-inline: 2rem;
+
+    .label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
